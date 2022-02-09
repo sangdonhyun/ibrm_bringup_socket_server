@@ -1,0 +1,115 @@
+#***** [  USER Define Items   ] ****************************************************
+#----- [  Production Database Informations  ] ---------------------------------------
+
+ export DB_NAME=SHIN
+ export ORACLE_SID=SHIN
+ export ORACLE_USER=oracle
+ export RMAN_USER=oracle
+ export ORACLE_BASE=/u01/app/oracle
+ export ORACLE_HOME=$ORACLE_BASE/product/12.1.0.2
+ export PATH=$ORACLE_HOME/bin:$PATH:/usr/lib64/openmpi/bin:.
+ export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+
+ export PROD_ARCH=/u02/oradata
+ export RMAN_TAG_FULL=ZFS_${DB_NAME}_FULL
+ export RMAN_TAG_INCR=ZFS_${DB_NAME}_INCR
+
+#----- [  RMAN Catalog DB Informations   ] -----------------------------------------
+
+ export cat_user=rmancat
+ export cat_pass=welcome1
+ export cat_db=catdb
+ alias rmancat='rman target / catalog ${cat_user}/${cat_pass}@${cat_db}'
+
+#----- [  Define Directory    ] ----------------------------------------------------
+
+ export BASEDIR=/ZFS
+
+ export DB_DIR=SHIN
+ export DATA_DIR=SHIN
+ export ARCH_DIR=SHIN
+
+#----- [ ZFS Backup Appliance ] ----------------------------------------------------
+
+ export LOGINSTRING_1=root@192.168.56.105
+ export POOLNAME_1=Pool1
+ 
+ export LOGINSTRING_2=root@192.168.56.105
+ export POOLNAME_2=Pool2
+
+ export DATA_PROJNAME=SHIN
+ export ARCH_PROJNAME=SHIN
+
+ export DSHARE_NO=2
+ export ARCH_NO=2
+
+ export DCH_NO=8
+
+#----- [ Retention Period of Snapshots ] -------------------------------------------
+
+ export Full_SnapDate=`date   -d '7 day  ago'  +%Y%m%d_%H%M`
+ export Daily_SnapDate=`date  -d '7 day  ago'  +%Y%m%d_%H%M`
+ export Weekly_SnapDate=`date -d '2 week ago'  +%Y%m%d_%H%M`
+ export Arch_SnapDate=`date   -d '7 day  ago'  +%Y%m%d_%H%M`
+ export Backup_Archlog=`date  -d '2 day  ago'  +%Y_%m%d`
+ export Backup_Log=`date      -d '10 day ago'  +%Y_%m%d`
+ export TSChange=`date        -d '2 day  ago'  +%Y%m%d`
+ export Arch_history=`date    -d '1 day  ago'  +%Y%m%d`
+ 
+#----- Define Aliaes  ------------------------------------------------
+
+ alias sss='sqlplus / as sysdba'
+ alias rmant='rman target / nocatalog'
+ alias rmancat='rman target / catalog $cat_user/$cat_pass@$cat_db'
+
+#***** [  End of USER Define Items   ] ********************************************
+
+#----- [ No modification required ] -----------------------------------------------
+
+ export YMD=`date +%Y_%m%d`
+ export YMDH=`date +%Y_%m%d_%H`
+ export YMDHM=`date +%Y_%m%d_%H%M`
+ export YMDHMS=`date +%Y_%m%d_%H%M%S`
+ export TIME_M=`date +%M`
+
+ export LOGDIR=${BASEDIR}/LOGS/${DB_DIR}
+ export SCRDIR=${BASEDIR}/SCRIPTS
+ export RMANDIR=${SCRDIR}/Database/${DB_DIR}/RMAN
+ export SHELLDIR=${SCRDIR}/SHELL
+ export SQLDIR=${SCRDIR}/SQL
+ export ZFSDIR=${SCRDIR}/ZFS
+ export CLONEDIR=${SCRDIR}/CloneDB
+ export BACKUP_DIR=${BASEDIR}/BACKUP
+ export BACKUPDB_LOGDIR=${LOGDIR}/${DB_DIR}_${YMD}
+ export RUN_USER=`id |cut -d "(" -f2 |cut -d ")" -f1`
+
+ export RMAN_FULL_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_RMAN_Full_${YMDH}.log
+ export RMAN_L0_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_RMAN_Level0_${YMDH}.log
+ export RMAN_L1_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_RMAN_Level1_${YMDH}.log
+ export RMAN_Merge_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_RMAN_Merge_${YMDH}.log
+ export Arch_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_Archive_log_${YMDH}.log
+ export SHELL_LOG=${LOGDIR}/${DB_NAME}_Backup_history.txt
+
+ export Full_DataSnap_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_Full_DataSnap_${YMDH}.log
+ export Incr_DataSnap_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_Incr_DataSnap_${YMDH}.log
+ export ArchSnap_LOG=${BACKUPDB_LOGDIR}/${DB_NAME}_ArchiveSnap_${YMDH}.log
+
+#----- [ ZFS Appliance - Exported file systems ] ----------------------------------
+ 
+ export SHARE_DATA_1=BAK_${DATA_DIR}_01
+ export SHARE_DATA_2=BAK_${DATA_DIR}_02
+ export SHARE_ARCH_1=ARC_${ARCH_DIR}_01
+ export SHARE_ARCH_2=ARC_${ARCH_DIR}_02
+ 
+#----- [ NFS mount file systems on the all of DB Servers ] ------------------------
+
+ export BACKUP_DATA_DIR1=${BACKUP_DIR}/DATA_${DATA_DIR}_01
+ export BACKUP_DATA_DIR2=${BACKUP_DIR}/DATA_${DATA_DIR}_02
+ export BACKUP_ARCH_DIR1=${BACKUP_DIR}/ARCH_${ARCH_DIR}_01
+ export BACKUP_ARCH_DIR2=${BACKUP_DIR}/ARCH_${ARCH_DIR}_02
+ 
+#----- [ ZBRM TEMP Directory ] -----------------------------------------------------
+
+ export ZFS_TEMP_DIR=${BACKUP_DATA_DIR1}/TEMP
+
+#-----------------------------------------------------------------------------------

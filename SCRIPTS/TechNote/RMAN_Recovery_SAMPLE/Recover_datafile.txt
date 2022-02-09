@@ -1,0 +1,17 @@
+## Recover datafile to different location
+RMAN> startup mount
+RMAN> run {
+set newname for datafile 5 to '/xxx/xxx/datfile.dbf';
+restore database
+switch datafile all;
+recover database;
+alter database open;
+}
+
+## Recover datafile No 5
+RMAN> run {
+sql 'alter database datafile 5 offline';
+restore datafile 5;
+recover datafile 5;
+sql 'alter database datafile 5 online';
+}

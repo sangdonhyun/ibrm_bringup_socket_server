@@ -1,0 +1,784 @@
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 1
+==========================================================================
+ZFS RMAN FULL Backup Snapshot List [ PROJECT: T8-PDB2 ]
+Daily_Data_20190605_2309
+Daily_Data_20190605_2342
+Daily_Data_20190606_0202
+***********************************************************************
+ZFS Archive Log Backup Snapshot List
+Arch_20190605_2311
+Arch_20190605_2347
+Arch_20190606_0204
+Arch_20190606_1929
+Arch_20190606_1936
+==========================================================================
+Enter return to continue : [Return]
+
+
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 2
+If you want to use same snapshot name. Press [s]
+If you want to change snapshot name for not schedule delete. Press [r]
+Enter your choice ( S or R ) : s
+
+==========================================================================
+Input Data Snapshot Name for CloneDB : Daily_Data_20190606_0202
+Please enter [y] to continue : y
+
+Last login: Thu Jun  6 10:58:01 2019 from 10.10.84.20
+Cloning of BAK_PDB2_01 using snapshot Daily_Data_20190606_0202, project T8-PDB2 on pool Pool1.
+Cloning the share BAK_PDB2_01
+Cloning of shares CLONE_BAK_PDB2_11 as project T8-PDB2 on pool Pool1 completed.
+Last login: Thu Jun  6 10:58:08 2019 from 10.10.84.20
+Cloning of BAK_PDB2_02 using snapshot Daily_Data_20190606_0202, project T8-PDB2 on pool Pool2.
+Cloning the share BAK_PDB2_02
+Cloning of shares CLONE_BAK_PDB2_12 as project T8-PDB2 on pool Pool2 completed.
+==========================================================================
+Enter return to continue : [Return]
+
+
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 3
+If you want to use the backup snapshot name. Press [s]
+If you want to create a new archive log snapshot at the current time. Press [c]
+Enter your choice ( S or C ) : s
+
+==========================================================================
+Input Snapshot Name of Backup Archive Log : Arch_20190606_1936
+Please enter [y] to continue : y
+Last login: Thu Jun  6 10:58:15 2019 from 10.10.84.20
+Cloning of ARC_PDB2_01 using snapshot Arch_20190606_1936, project T8-PDB2 on pool Pool1.
+Cloning the share ARC_PDB2_01
+Cloning of shares CLONE_ARC_PDB2_11 as project T8-PDB2 on pool Pool1 completed.
+Last login: Thu Jun  6 10:58:34 2019 from 10.10.84.20
+Cloning of ARC_PDB2_02 using snapshot Arch_20190606_1936, project T8-PDB2 on pool Pool2.
+Cloning the share ARC_PDB2_02
+Cloning of shares CLONE_ARC_PDB2_12 as project T8-PDB2 on pool Pool2 completed.
+==========================================================================
+Enter return to continue : [Return]
+
+
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 4
+==========================================================================
+List of Shared File systmes [ POOL: Pool1 ] [ PROJECT: T8-PDB2 ]
+
+ARC_PDB2_01
+BAK_PDB2_01
+CLONE_ARC_PDB2_11
+CLONE_BAK_PDB2_11
+==========================================================================
+List of Shared File systmes [ POOL: Pool2 ] [ PROJECT: T8-PDB2 ]
+
+ARC_PDB2_02
+BAK_PDB2_02
+CLONE_ARC_PDB2_12
+CLONE_BAK_PDB2_12
+==========================================================================
+Enter return to continue : [Return]
+
+
+
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 5
+
+************************************************************************************
+ Mount command need root privileges.
+ Please input root password !!!
+Password:
+Oracle Corporation      SunOS 5.11      11.3    July 2018
+You have new mail.
+********************************************************************************************
+Filesystem                        Size   Used   Available Capacity Mounted on
+--------------------------------------------------------------------------------------------
+ZS5-1:/export/CLONE_BAK_PDB2_11    60T   2.6G        60T     1%    /ZFS/CLONE_PDB2_11
+ZS5-1:/export/CLONE_ARC_PDB2_11    60T    12G        60T     1%    /ZFS/CLONE_PDB2_11/Arch
+ZS5-2:/export/CLONE_BAK_PDB2_12    60T   1.4G        60T     1%    /ZFS/CLONE_PDB2_12
+ZS5-2:/export/CLONE_ARC_PDB2_12    60T    11G        60T     1%    /ZFS/CLONE_PDB2_12/Arch
+********************************************************************************************
+Enter return to continue : [Return]
+
+
+==========================================================================
+ [PDB2] - [CLONEDB1] Bring-up Management from ZFS Backup Image !!
+==========================================================================
+    1.  List of Snapshot Backup Data
+
+    2.  Create CLONE Data Image from ZFS Backup Snapshot
+
+    3.  Create CLONE Archive Log Image from ZFS Backup Snapshot
+
+    4.  List of Exported Filesystems from PROJECT [ T8-PDB2 ]
+
+    5.  NFS mount CLONE Images from ZFS Backup Appliance
+
+    6.  CLONEDB Bring-up Menu - ( DBA Role )
+
+    7.  Umount NFS CLONE Images (Data, Archive)
+
+    8.  Delete All of ZFS CLONE Image (Data, Archive)
+
+    9.  Delete ZFS CLONE Data Image
+
+    10. Delete ZFS CLONE Archive Log Image
+
+    Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+Enter your selection : 6
+
+
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 1
+Enter return to continue : [Return]
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 2
+Enter return to continue : [Return]
+
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 3
+Enter return to continue : [Return]
+
+------[ See the /ZFS/LOGS/CloneDB1/CLONEDB1_Recover_yyyymmdd_HHMMSS.log ] ---------------------------------------------------------------------------------------------
+
+tart create trace controlfile for inventory unnamed datafile !!
+
+Recovery Manager: Release 12.2.0.1.0 - Production on Thu Jun 6 19:49:51 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: CLONEDB1 (DBID=4075358829, not open)
+using target database control file instead of recovery catalog
+
+RMAN>
+Statement processed
+
+RMAN>
+
+Recovery Manager complete.
+SYS@PDB2 >
+SYS@PDB2 > select TABLESPACE_NAME, NAME as DATAFILE_NAME, to_char(BYTES/1024/1024) || ' MB' "SIZE",
+  2     to_char(CREATION_TIME, 'yyyy/mm/dd hh24:mi:ss') as CREATION_TIME from v$datafile_header
+  3     where to_char(CREATION_TIME, 'yyyymmdd') >= 20190605
+  4     order by CREATION_TIME;
+
+TABLESPACE_NAME      DATAFILE_NAME                                                                         SIZE         CREATION_TIME
+-------------------- ------------------------------------------------------------------------------------- ------------ --------------------
+SOE                  /u01/app/oracle/oradata/PDB2/datafile/o1_mf_soe_ghg8vk6f_.dbf                         1626 MB      2019/06/05 11:05:37
+TEST02               /u01/app/oracle/oradata/PDB2/datafile/test02.dbf                                      1024 MB      2019/06/06 19:26:22    <- Test02 file added
+
+SYS@PDB2 > spool off;
+
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 19:49:52 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 >   2    3
+       TS# TBS_NAME   FILE_NAME                                                                        STATUS  CHECKPOINT_CHANGE#
+---------- ---------- -------------------------------------------------------------------------------- ------- ------------------
+         0 SYSTEM     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SYSTEM_FNO-1_aru3cdeo             SYSTEM             4053828
+         1 SYSAUX     /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-SYSAUX_FNO-3_aqu3cden             RECOVER            4053826
+         2 UNDOTBS1   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-UNDOTBS1_FNO-4_asu3cdeo           RECOVER            4053830
+         4 USERS      /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-USERS_FNO-7_b0u3cdeo              RECOVER            4053836
+         6 DATA_TBS   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-DATA_TBS_FNO-5_auu3cdeo           RECOVER            4053833
+         7 DATA2_TBS  /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-DATA2_TBS_FNO-2_atu3cdeo          RECOVER            4053834
+         8 TEST       /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST_FNO-8_avu3cdeo               RECOVER            4053832
+         9 SOE        /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SOE_FNO-9_apu3cden                RECOVER            4053824
+
+8 rows selected.
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+********************************************************************************************************************
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 5
+
+Enter the Sequence Number you want to recover : 187
+Enter return to continue : [Return]
+
+
+------[ See the /ZFS/LOGS/CloneDB1/CLONEDB1_Recover_yyyymmdd_HHMMSS.log ] ---------------------------------------------------------------------------------------------
+
+Start Sequence based Recovery !! : 2019-06-06_19:50:13
+
+Recovery Manager: Release 12.2.0.1.0 - Production on Thu Jun 6 19:50:13 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: CLONEDB1 (DBID=4075358829, not open)
+
+RMAN> 2> 3> 4> 5> 6> 7> 8> 9>
+using target database control file instead of recovery catalog
+allocated channel: CH01
+channel CH01: SID=67 device type=DISK
+
+allocated channel: CH02
+channel CH02: SID=81 device type=DISK
+
+allocated channel: CH03
+channel CH03: SID=99 device type=DISK
+
+allocated channel: CH04
+channel CH04: SID=115 device type=DISK
+
+executing command: SET until clause
+
+Starting recover at 2019/06/06 19:50:15
+
+starting media recovery
+
+archived log for thread 1 with sequence 181 is already on disk as file /ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-181_T-1_A-4075751270_atu3elcu.arc
+archived log for thread 1 with sequence 182 is already on disk as file /ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-182_T-1_A-4075751270_6fu3cnot.arc
+archived log for thread 1 with sequence 183 is already on disk as file /ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-183_T-1_A-4075751270_9lu3elck.arc
+archived log for thread 1 with sequence 184 is already on disk as file /ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-184_T-1_A-4075751270_c2u3eld1.arc
+archived log for thread 1 with sequence 185 is already on disk as file /ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-185_T-1_A-4075751270_b6u3elcv.arc
+archived log for thread 1 with sequence 186 is already on disk as file /ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-186_T-1_A-4075751270_c3u3eld1.arc
+archived log file name=/ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-181_T-1_A-4075751270_atu3elcu.arc thread=1 sequence=181
+archived log file name=/ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-182_T-1_A-4075751270_6fu3cnot.arc thread=1 sequence=182
+archived log file name=/ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-183_T-1_A-4075751270_9lu3elck.arc thread=1 sequence=183
+creating datafile file number=10 name=/u01/app/oracle/oradata/PDB2/datafile/test02.dbf
+released channel: CH01
+released channel: CH02
+released channel: CH03
+released channel: CH04
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of recover command at 06/06/2019 19:50:20
+RMAN-20505: create datafile during recovery
+ORA-01119: error in creating database file '/u01/app/oracle/oradata/PDB2/datafile/test02.dbf'
+ORA-27086: unable to lock file - already in use
+SVR4 Error: 11: Resource temporarily unavailable
+Additional information: 8
+Additional information: 18070
+RMAN-11003: failure during parse/execution of SQL statement: alter database recover logfile '/ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-183_T-1_A-40757                                           51270_9lu3elck.arc'
+ORA-00283: recovery session canceled due to errors
+ORA-01244: unnamed datafile(s) added to control file by media recovery
+ORA-01110: data file 10: '/u01/app/oracle/oradata/PDB2/datafile/test02.dbf'
+
+RMAN>
+
+Recovery Manager complete.
+
+**[ Please wait until the last command to open CLONE DB ]***********************************************************
+**[ Check the status of the CLONE DB after the recovery is complete. ]**********************************************
+
+
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 19:50:20 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 > ALTER DATABASE OPEN RESETLOGS
+*
+ERROR at line 1:
+ORA-01157: cannot identify/lock data file 10 - see DBWR trace file
+ORA-01111: name for data file 10 is unknown - rename to correct file
+ORA-01110: data file 10: '/u01/app/oracle/product/12.1.0/db_3/dbs/UNNAMED00010'
+
+
+SYS@CLONEDB1 > ALTER TABLESPACE TEMP ADD TEMPFILE '/ZFS/CLONE_PDB2_11/clone_temp01.tmp' SIZE 20971520   REUSE AUTOEXTEND ON NEXT 655360  MAXSIZE 32767M
+*
+ERROR at line 1:
+ORA-01109: database not open
+
+
+SYS@CLONEDB1 >
+INSTANCE_NAME    STATUS
+---------------- ------------
+CLONEDB1         MOUNTED
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 3
+Enter return to continue : [Return]
+
+
+------[ See the /ZFS/LOGS/CloneDB1/CLONEDB1_Recover_yyyymmdd_HHMMSS.log ] ---------------------------------------------------------------------------------------------
+
+Start create trace controlfile for inventory unnamed datafile !!
+
+Recovery Manager: Release 12.2.0.1.0 - Production on Thu Jun 6 19:55:03 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: CLONEDB1 (DBID=4075358829, not open)
+using target database control file instead of recovery catalog
+
+RMAN>
+Statement processed
+
+RMAN>
+
+Recovery Manager complete.
+SYS@PDB2 >
+SYS@PDB2 > select TABLESPACE_NAME, NAME as DATAFILE_NAME, to_char(BYTES/1024/1024) || ' MB' "SIZE",
+  2     to_char(CREATION_TIME, 'yyyy/mm/dd hh24:mi:ss') as CREATION_TIME from v$datafile_header
+  3     where to_char(CREATION_TIME, 'yyyymmdd') >= 20190605
+  4     order by CREATION_TIME;
+
+TABLESPACE_NAME      DATAFILE_NAME                                                                         SIZE         CREATION_TIME
+-------------------- ------------------------------------------------------------------------------------- ------------ --------------------
+SOE                  /u01/app/oracle/oradata/PDB2/datafile/o1_mf_soe_ghg8vk6f_.dbf                         1626 MB      2019/06/05 11:05:37
+TEST02               /u01/app/oracle/oradata/PDB2/datafile/test02.dbf                                      1024 MB      2019/06/06 19:26:22
+
+SYS@PDB2 > spool off;
+
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 19:55:04 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 >   2    3
+       TS# TBS_NAME   FILE_NAME                                                                        STATUS  CHECKPOINT_CHANGE#
+---------- ---------- -------------------------------------------------------------------------------- ------- ------------------
+         0 SYSTEM     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SYSTEM_FNO-1_aru3cdeo             SYSTEM             4054241
+         1 SYSAUX     /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-SYSAUX_FNO-3_aqu3cden             RECOVER            4054241
+         2 UNDOTBS1   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-UNDOTBS1_FNO-4_asu3cdeo           RECOVER            4054241
+         4 USERS      /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-USERS_FNO-7_b0u3cdeo              RECOVER            4054241
+         6 DATA_TBS   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-DATA_TBS_FNO-5_auu3cdeo           RECOVER            4054241
+         7 DATA2_TBS  /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-DATA2_TBS_FNO-2_atu3cdeo          RECOVER            4054241
+         8 TEST       /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST_FNO-8_avu3cdeo               RECOVER            4054241
+         9 SOE        /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SOE_FNO-9_apu3cden                RECOVER            4054241
+        10 TEST02     /u01/app/oracle/product/12.1.0/db_3/dbs/UNNAMED00010                             RECOVER            4086916  <- Need to create datafile
+
+9 rows selected.
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+-----[ Execute SQL Command ]-------------------------------------------------------------------------------------------------------------------------------------------
+
+SYS@CLONEDB1 > alter database create datafile  '/u01/app/oracle/product/12.1.0/db_3/dbs/UNNAMED00010' as '/ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST02_FNO-10_avu3cdeo';
+
+Database altered.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 3
+Enter return to continue : [Return]
+
+
+------[ See the /ZFS/LOGS/CloneDB1/CLONEDB1_Recover_yyyymmdd_HHMMSS.log ] ---------------------------------------------------------------------------------------------
+
+Start create trace controlfile for inventory unnamed datafile !!
+
+Recovery Manager: Release 12.2.0.1.0 - Production on Thu Jun 6 20:04:13 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: CLONEDB1 (DBID=4075358829, not open)
+using target database control file instead of recovery catalog
+
+RMAN>
+Statement processed
+
+RMAN>
+
+Recovery Manager complete.
+SYS@PDB2 >
+SYS@PDB2 > select TABLESPACE_NAME, NAME as DATAFILE_NAME, to_char(BYTES/1024/1024) || ' MB' "SIZE",
+  2     to_char(CREATION_TIME, 'yyyy/mm/dd hh24:mi:ss') as CREATION_TIME from v$datafile_header
+  3     where to_char(CREATION_TIME, 'yyyymmdd') >= 20190605
+  4     order by CREATION_TIME;
+
+TABLESPACE_NAME      DATAFILE_NAME                                                                         SIZE         CREATION_TIME
+-------------------- ------------------------------------------------------------------------------------- ------------ --------------------
+SOE                  /u01/app/oracle/oradata/PDB2/datafile/o1_mf_soe_ghg8vk6f_.dbf                         1626 MB      2019/06/05 11:05:37
+TEST02               /u01/app/oracle/oradata/PDB2/datafile/test02.dbf                                      1024 MB      2019/06/06 19:26:22
+
+SYS@PDB2 > spool off;
+
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 20:04:14 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 >   2    3
+       TS# TBS_NAME   FILE_NAME                                                                        STATUS  CHECKPOINT_CHANGE#
+---------- ---------- -------------------------------------------------------------------------------- ------- ------------------
+         0 SYSTEM     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SYSTEM_FNO-1_aru3cdeo             SYSTEM             4054241
+         1 SYSAUX     /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-SYSAUX_FNO-3_aqu3cden             RECOVER            4054241
+         2 UNDOTBS1   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-UNDOTBS1_FNO-4_asu3cdeo           RECOVER            4054241
+         4 USERS      /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-USERS_FNO-7_b0u3cdeo              RECOVER            4054241
+         6 DATA_TBS   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-DATA_TBS_FNO-5_auu3cdeo           RECOVER            4054241
+         7 DATA2_TBS  /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-DATA2_TBS_FNO-2_atu3cdeo          RECOVER            4054241
+         8 TEST       /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST_FNO-8_avu3cdeo               RECOVER            4054241
+         9 SOE        /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SOE_FNO-9_apu3cden                RECOVER            4054241
+        10 TEST02     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST02_FNO-10_avu3cdeo            RECOVER            4086916
+
+9 rows selected.
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+==========================================================================
+ [CLONEDB1] Bring-up Steps !!!
+==========================================================================
+   1.  Create Control file for CloneDB Bring-up
+
+   2.  Read Catalog Information from backup data
+
+   3.  Create Trace Control file
+
+   4.  Execute SCN Based Recovery
+
+   5.  Execute Sequence Based Recovery
+
+   6.  Execute Time Based Recovery
+
+   Enter [q] - Return to the Previous Menu
+--------------------------------------------------------------------------
+
+Enter your selection : 5
+
+Enter the Sequence Number you want to recover : 187
+Enter return to continue : [Return]
+
+
+------[ See the /ZFS/LOGS/CloneDB1/CLONEDB1_Recover_yyyymmdd_HHMMSS.log ] ---------------------------------------------------------------------------------------------
+
+Start Sequence based Recovery !! : 2019-06-06_20:04:44
+
+Recovery Manager: Release 12.2.0.1.0 - Production on Thu Jun 6 20:04:44 2019
+
+Copyright (c) 1982, 2017, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: CLONEDB1 (DBID=4075358829, not open)
+
+RMAN> 2> 3> 4> 5> 6> 7> 8> 9>
+using target database control file instead of recovery catalog
+allocated channel: CH01
+channel CH01: SID=81 device type=DISK
+
+allocated channel: CH02
+channel CH02: SID=99 device type=DISK
+
+allocated channel: CH03
+channel CH03: SID=115 device type=DISK
+
+allocated channel: CH04
+channel CH04: SID=131 device type=DISK
+
+executing command: SET until clause
+
+Starting recover at 2019/06/06 20:04:46
+
+starting media recovery
+
+archived log for thread 1 with sequence 183 is already on disk as file /ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-183_T-1_A-4075751270_9lu3elck.arc
+archived log for thread 1 with sequence 184 is already on disk as file /ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-184_T-1_A-4075751270_c2u3eld1.arc
+archived log for thread 1 with sequence 185 is already on disk as file /ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-185_T-1_A-4075751270_b6u3elcv.arc
+archived log for thread 1 with sequence 186 is already on disk as file /ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-186_T-1_A-4075751270_c3u3eld1.arc
+archived log file name=/ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-183_T-1_A-4075751270_9lu3elck.arc thread=1 sequence=183
+archived log file name=/ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-184_T-1_A-4075751270_c2u3eld1.arc thread=1 sequence=184
+archived log file name=/ZFS/CLONE_PDB2_12/Arch/arch_D-PDB2_id-4075358829_S-185_T-1_A-4075751270_b6u3elcv.arc thread=1 sequence=185
+archived log file name=/ZFS/CLONE_PDB2_11/Arch/arch_D-PDB2_id-4075358829_S-186_T-1_A-4075751270_c3u3eld1.arc thread=1 sequence=186
+media recovery complete, elapsed time: 00:00:01
+Finished recover at 2019/06/06 20:04:49
+released channel: CH01
+released channel: CH02
+released channel: CH03
+released channel: CH04
+
+RMAN>
+
+Recovery Manager complete.
+
+**[ Please wait until the last command to open CLONE DB ]***********************************************************
+**[ Check the status of the CLONE DB after the recovery is complete. ]**********************************************
+
+
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 20:04:49 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 >
+Database altered.
+
+SYS@CLONEDB1 >
+Tablespace altered.
+
+SYS@CLONEDB1 >
+INSTANCE_NAME    STATUS
+---------------- ------------
+CLONEDB1         OPEN
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+ Sequence based Recovery has been Finished : 2019-06-06_20:05:02
+
+**[ End of Step 3 ]*************************************************************************************************
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL*Plus: Release 12.2.0.1.0 Production on Thu Jun 6 20:48:07 2019
+
+Copyright (c) 1982, 2016, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+
+SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 > SYS@CLONEDB1 >   2    3
+       TS# TBS_NAME   FILE_NAME                                                                        STATUS  CHECKPOINT_CHANGE#
+---------- ---------- -------------------------------------------------------------------------------- ------- ------------------
+         0 SYSTEM     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SYSTEM_FNO-1_aru3cdeo             SYSTEM             4087006
+         1 SYSAUX     /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-SYSAUX_FNO-3_aqu3cden             ONLINE             4087006
+         2 UNDOTBS1   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-UNDOTBS1_FNO-4_asu3cdeo           ONLINE             4087006
+         4 USERS      /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-USERS_FNO-7_b0u3cdeo              ONLINE             4087006
+         6 DATA_TBS   /ZFS/CLONE_PDB2_12/data_D-PDB2_I-4075358829_TS-DATA_TBS_FNO-5_auu3cdeo           ONLINE             4087006
+         7 DATA2_TBS  /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-DATA2_TBS_FNO-2_atu3cdeo          ONLINE             4087006
+         8 TEST       /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST_FNO-8_avu3cdeo               ONLINE             4087006
+         9 SOE        /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-SOE_FNO-9_apu3cden                ONLINE             4087006
+        10 TEST02     /ZFS/CLONE_PDB2_11/data_D-PDB2_I-4075358829_TS-TEST02_FNO-10_avu3cdeo            ONLINE             4087006
+
+9 rows selected.
+
+SYS@CLONEDB1 > Disconnected from Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

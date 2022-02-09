@@ -1,0 +1,109 @@
+#***** [  USER Define Items   ] ****************************************************
+
+#----- [       Directory      ] ----------------------------------------------------
+
+ export BASEDIR=/ZFS
+ export SCRDIR=${BASEDIR}/SCRIPTS
+ export SHELLDIR=${SCRDIR}/SHELL
+ export SQLDIR=${SCRDIR}/SQL
+ export ZFSDIR=${SCRDIR}/ZFS
+
+ export CLONEDIR=CLONEDB4
+ export CLONE_DATA_DIR=${BASEDIR}/${CLONEDIR}
+ export CLONE_BASEDIR=${SCRDIR}/CloneDB
+ export CLONEDB_DIR=${CLONE_BASEDIR}/${CLONEDIR}
+ export DBADIR=${CLONEDB_DIR}/DBA
+ export LOGDIR=${BASEDIR}/LOGS/${CLONEDIR}
+ export SHELL=/bin/ksh
+
+#----- [       CLONE DB4      ] ----------------------------------------------------
+
+ export BK_DBNAME=UPGR
+ export ORACLE_SID=CLONEDB4
+ export ORACLE_DBNAME=CLONEDB4
+
+ export ORACLE_BASE=/u01/app/oracle
+ export ORACLE_HOME=$ORACLE_BASE/product/11.2.0.4
+ export PATH=$ORACLE_HOME/bin:$PATH:/usr/lib64/openmpi/bin:.
+ export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+
+#----- [ ZFS Backup Appliance ] ----------------------------------------------------
+
+ export DSHARE_NO=2
+ export ARCH_NO=2
+
+ export BK_DATA_DIR=UPGR
+ export BK_ARCH_DIR=UPGR
+
+ export DATA_PROJNAME=UPGR
+ export ARCH_PROJNAME=UPGR
+
+ export LOGINSTRING_1=root@192.168.56.105
+ export POOLNAME_1=Pool1
+
+ export LOGINSTRING_2=root@192.168.56.105
+ export POOLNAME_2=Pool2
+
+#----- [ ZFS Replicated Project ] -------------------------------------------------- 
+
+ export RDSHARE_NO=2
+ export RARCH_NO=2
+ export RLOGINSTRING_1=root@10.10.50.65
+ export RPOOLNAME_1=Pool1
+ export RLOGINSTRING_2=root@10.10.50.66
+ export RPOOLNAME_2=Pool2 
+
+ export SOURCENAME_1=source-001 
+ export SOURCENAME_2=source-001 
+ export PKGNAME_1=package-003 
+ export PKGNAME_2=package-003 
+ export DATA_SPROJNAME=DS_SIDB 
+ export ARCH_SPROJNAME=DS_SIDB 
+ export NPROJNAME=REP_DS_SIDB 
+ export SDATANAME_1=DATA_SIDB_01 
+ export SDATANAME_2=DATA_SIDB_02
+ export SARCHNAME_1=ARCH_SIDB_01
+ export SARCHNAME_2=ARCH_SIDB_02
+
+#**********************************************************************************
+#----- [ No modification required ] -----------------------------------------------
+
+ export YMD=`date +%Y%m%d`
+ export YMDH=`date +%Y%m%d_%H`
+ export YMDHM=`date +%Y%m%d_%H%M`
+ export YMDHMS=`date +%Y%m%d_%H%M%S`
+
+ export CLONEDB_Recover_LOG=${LOGDIR}/${BK_DBNAME}_Recover_${YMDH}.log
+
+ export BACKUP_DATA_1=DATA_${BK_DATA_DIR}_01
+ export BACKUP_DATA_2=DATA_${BK_DATA_DIR}_02
+ export BACKUP_ARCH_1=ARCH_${BK_ARCH_DIR}_01
+ export BACKUP_ARCH_2=ARCH_${BK_ARCH_DIR}_02
+
+ export CLONE_DATA_1=DATA_${BK_DATA_DIR}_41
+ export CLONE_DATA_2=DATA_${BK_DATA_DIR}_42
+ export CLONE_ARCH_1=ARCH_${BK_ARCH_DIR}_41
+ export CLONE_ARCH_2=ARCH_${BK_ARCH_DIR}_42
+
+ export CLONE_DATA_DIR1=${CLONE_DATA_DIR}/${CLONE_DATA_1}
+ export CLONE_DATA_DIR2=${CLONE_DATA_DIR}/${CLONE_DATA_2}
+ export CLONE_ARCH_DIR1=${CLONE_DATA_DIR}/${CLONE_ARCH_1}
+ export CLONE_ARCH_DIR2=${CLONE_DATA_DIR}/${CLONE_ARCH_2}
+
+ export CLONE_TEMP=${CLONE_DATA_DIR1}/clone_temp01.tmp 
+
+#----- [ ZFS Appliance - Exported file systems ] ----------------------------------
+ 
+ export SHARE_DATA_1=BAK_${BK_DATA_DIR}_01
+ export SHARE_DATA_2=BAK_${BK_DATA_DIR}_02
+ export SHARE_ARCH_1=ARC_${BK_ARCH_DIR}_01
+ export SHARE_ARCH_2=ARC_${BK_ARCH_DIR}_02
+
+ export SHARE_CLONE_DATA_1=CLONE_BAK_${BK_DATA_DIR}_41
+ export SHARE_CLONE_DATA_2=CLONE_BAK_${BK_DATA_DIR}_42
+ export SHARE_CLONE_ARCH_1=CLONE_ARC_${BK_ARCH_DIR}_41
+ export SHARE_CLONE_ARCH_2=CLONE_ARC_${BK_ARCH_DIR}_42
+
+#-----------------------------------------------------------------------------------
+ alias ss='sqlplus / as sysdba'
+ alias rmant='rman target /'

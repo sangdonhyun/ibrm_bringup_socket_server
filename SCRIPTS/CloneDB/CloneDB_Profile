@@ -1,0 +1,29 @@
+
+#***** [ CLONE DB ] ****************************************************************
+
+ export CLONEDB1_NAME=ORCL
+ export CLONEDB2_NAME=ORCL
+ export CLONEDB3_NAME=ORCL
+ export CLONEDB4_NAME=ORCL
+
+#***********************************************************************************
+
+ export SCRDIR=${BASEDIR}/SCRIPTS
+ export SHELLDIR=${SCRDIR}/SHELL
+ export RMANDIR=${SCRDIR}/RMAN
+ export SQLDIR=${SCRDIR}/SQL
+ export ZFSDIR=${SCRDIR}/ZFS
+ 
+ export CLONE_BASEDIR=${SCRDIR}/CloneDB
+ export CLONEDIR1=${CLONE_BASEDIR}/CLONEDB1
+ export CLONEDIR2=${CLONE_BASEDIR}/CLONEDB2
+ export CLONEDIR3=${CLONE_BASEDIR}/CLONEDB3
+ export CLONEDIR4=${CLONE_BASEDIR}/CLONEDB4
+
+ export BACKUP_DIR=${BASEDIR}/BACKUP
+ export CLONEDB1_DIR=${BASEDIR}/CLONEDB1
+ export CLONEDB2_DIR=${BASEDIR}/CLONEDB2
+ export CLONEDB3_DIR=${BASEDIR}/CLONEDB3
+ export CLONEDB4_DIR=${BASEDIR}/CLONEDB4
+
+#***********************************************************************************

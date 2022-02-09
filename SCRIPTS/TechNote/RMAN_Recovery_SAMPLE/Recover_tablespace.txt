@@ -1,0 +1,7 @@
+## Recover tablespace 
+RMAN> run {
+sql 'alter tablespace example offline immediate';
+restore tablespace example;
+recover tablespace example;
+sql 'alter tablespace example online';
+}

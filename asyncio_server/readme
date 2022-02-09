@@ -1,0 +1,42 @@
+1. bringup_data_clone_nfs
+2. bringup_arch_clone_nfs
+3. bringup_mount_nfs
+4. bringup_data_recovery
+5. bringup_arch_recovery
+
+
+{
+	"telegramNum":"RQ050100",
+	"reqNum":"202112210001",
+	"project":"ORCL",
+	"svrIp":"121.170.193.203",
+	"oraVer":"Release 18.0.0.0.0",
+	"oraSid":"CLONEDB1",
+	"oraHome":"/u01/app/oracle/product/18c",
+	"restoreDt":"2021/12/11 12:00:00",
+	"resCd":"",
+	"resDesc":"",
+	"creDt":"20211221 15:00:01"	,
+	"snapshots":[
+		{
+			"zfsIp":"121.170.193.213",
+			"snapTyp":"DATA",
+			"pool":"Pool1",
+			"snapshot":"Daily_Data_20211221_1000",
+			"share":"BAK_ORCL_01",
+			"cloneMount":"CLONEDB1_BAK_ORCL_01",
+			"sharePrefix":"CLONEDB1",
+			"zfsUri":"/api/storage/v1/pools/Pool1/projects/ORCL/filesystems/BAK_ORCL_01/snapshots/Daily_Data_20211221_1000"
+		},
+		{
+			"zfsIp":"121.170.193.213",
+			"snapTyp":"DATA",
+			"pool":"Pool2",
+			"snapshot":"Daily_Data_20211221_1000",
+			"share":"BAK_ORCL_01",
+			"cloneMount":"CLONEDB1_BAK_ORCL_01",
+			"sharePrefix":"CLONEDB1",
+			"zfsUri":"/api/storage/v1/pools/Pool2/projects/ORCL/filesystems/BAK_ORCL_02/snapshots/Daily_Data_20211221_1000"
+		}
+	]
+}

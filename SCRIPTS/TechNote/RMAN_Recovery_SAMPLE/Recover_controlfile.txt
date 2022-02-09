@@ -1,0 +1,19 @@
+## control file was broken and database offline
+RMAN> set dbid=xxxxx
+RMAN> startup nomount
+RMAN> restore controlfile from autobackup;
+RMAN> alter database mount;
+RMAN> recover database;
+RMAN> alter database open resetlogs;
+
+or 
+
+RMAN> set dbid=xxxxx
+RMAN> startup nomount
+RMAN> restore controlfile to '/xxx/xxx/restore.ctl' from tag=TAGxxxxxxxx
+#cp /xxx/xxx/restore.ctl /xxx/xxx/control01.ctl
+#cp /xxx/xxx/restore.ctl /xxx/xxx/control02.ctl
+#cp /xxx/xxx/restore.ctl /xxx/xxx/control03.ctl
+RMAN> alter database mount;
+RMAN> recover database;
+RMAN> alter database open resetlogs;

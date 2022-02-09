@@ -1,0 +1,7 @@
+$ mv  /Backup1/Data_USERS3_FNO-12   /Backup2/Data_USERS3_FNO-12
+
+$rman target /
+RMAN> catalog datafilecopy ‘/Backup2/Data_USERS3_FNO-12’;
+cataloged datafile copy
+datafile copy file name=/Backup2/Data_USERS3_FNO-12 RECID=40 STAMP=1067822631
+

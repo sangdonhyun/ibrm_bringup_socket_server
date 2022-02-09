@@ -1,0 +1,20 @@
+*.audit_trail='none'
+*.compatible='18.0.0'
+*.control_files='/ZFS/CLONEDB3/DATA_ORCL_31/new_control01.ctl'
+*.db_block_size=8192
+*.db_domain=''
+*.db_name='CLONEDB3'
+*.db_recovery_file_dest='/ZFS/CLONEDB3/ARCH_ORCL_31'
+*.db_recovery_file_dest_size=1024m
+*.open_cursors=300
+*.pga_aggregate_target=500m
+*.processes=150
+*.sga_target=512m
+*.undo_tablespace='UNDOTBS1'
+*.db_files=2048
+log_archive_dest_1='location=/ZFS/CLONEDB3/ARCH_ORCL_31'
+log_archive_format='arch_%s_%t_%r.arc'
+log_buffer=104857600
+nls_date_format='YYYY/MM/DD HH24:MI:SS'
+nls_language='AMERICAN'
+nls_territory='AMERICA'

@@ -1,0 +1,45 @@
+#***** [ DB NAME ] **********************************************
+
+ export DB1=ORCL
+ export DB2=SHIN
+ export DB3=UPGR
+
+#***** [ Directory ] ********************************************
+
+ export BASEDIR=/ZFS
+ export SCRDIR=${BASEDIR}/SCRIPTS
+ export SHELLDIR=${SCRDIR}/SHELL
+ export LOGDIR=${BASEDIR}/LOGS
+ export ZFSDIR=${SCRDIR}/ZFS
+ export SQLDIR=${SCRDIR}/SQL
+ export BACKUP_LOG=${LOGDIR}/Backup
+ export CLONE_BASEDIR=${SCRDIR}/CloneDB
+ export BACKUP_DIR=${BASEDIR}/BACKUP
+
+ export DB1DIR=${SCRDIR}/Database/${DB1}
+ export DB2DIR=${SCRDIR}/Database/${DB2}
+ export DB3DIR=${SCRDIR}/Database/${DB3}
+ export CLONEDB1=${CLONE_BASEDIR}/CLONEDB1
+ export CLONEDB2=${CLONE_BASEDIR}/CLONEDB2
+ export CLONEDB3=${CLONE_BASEDIR}/CLONEDB3
+ export CLONEDB4=${CLONE_BASEDIR}/CLONEDB4
+
+#***** [User Informations] **************************************
+
+ export RUN_USER=`id |cut -d "(" -f2 |cut -d ")" -f1`
+ export ORACLE_USER=oracle
+
+#***** [RMAN Catalog DB Informations] ***************************
+
+ export CAT_ORACLE_HOME=/u01/app/oracle/product/18c
+ export cat_user=rmancat
+ export cat_pass=welcome1
+ export cat_db=catdb
+
+#****************************************************************
+ stty erase 
+ set -o vi
+
+
+
+

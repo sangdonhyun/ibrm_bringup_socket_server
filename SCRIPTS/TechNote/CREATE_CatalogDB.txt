@@ -1,0 +1,78 @@
+SYS@catdb > alter session set "_ORACLE_SCRIPT"=true;
+
+Session altered.
+
+SYS@catdb > select name from v$datafile;
+
+NAME
+--------------------------------------------------------------------------------
+/u01/app/oracle/oradata/CATDB/datafile/system.dbf
+/u01/app/oracle/oradata/CATDB/datafile/sysaux.dbf
+/u01/app/oracle/oradata/CATDB/datafile/undotbs1.dbf
+/u01/app/oracle/oradata/CATDB/datafile/users.dbf
+
+SYS@catdb > create tablespace rcatalog datafile '/u01/app/oracle/oradata/CATDB/datafile/rcatalog.dbf' size 2000M;
+
+Tablespace created.
+
+SYS@catdb > SELECT TABLESPACE_NAME, STATUS, CONTENTS FROM DBA_TABLESPACES;
+
+TABLESPACE_NAME                STATUS    CONTENTS
+------------------------------ --------- ---------------------
+SYSTEM                         ONLINE    PERMANENT
+SYSAUX                         ONLINE    PERMANENT
+UNDOTBS1                       ONLINE    UNDO
+TEMP                           ONLINE    TEMPORARY
+USERS                          ONLINE    PERMANENT
+RCATALOG                       ONLINE    PERMANENT  => tablespace has been created
+
+6 rows selected.
+
+SYS@catdb > create user rmancat identified by welcome1 default tablespace rcatalog quota unlimited on rcatalog account unlock;
+
+User created.
+
+SYS@catdb > grant connect, resource, recovery_catalog_owner to rmancat;
+
+Grant succeeded.
+
+SYS@catdb > exit
+
+
+[oracle@localhost SCRIPTS]$ tnsping catdb     		=> check communication with catalog DB server
+
+TNS Ping Utility for Linux: Version 18.0.0.0.0 - Production on 22-FEB-2020 20:50:56
+
+Copyright (c) 1997, 2018, Oracle.  All rights reserved.
+
+Used parameter files:
+/u01/app/oracle/product/18/network/admin/sqlnet.ora
+
+
+Used TNSNAMES adapter to resolve the alias
+Attempting to contact (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1523)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = catdb)))
+OK (0 msec)
+
+
+
+[oracle@localhost SCRIPTS]$ rman target / catalog rmancat/welcome1@catdb
+
+Recovery Manager: Release 18.0.0.0.0 - Production on Mon Feb 17 15:00:45 2020
+Version 18.3.0.0.0
+
+Copyright (c) 1982, 2018, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: ORCL (DBID=1560392550)
+connected to recovery catalog database
+
+RMAN> create catalog tablespace 'RCATALOG';
+
+recovery catalog created
+
+RMAN> register database;
+
+database registered in recovery catalog
+starting full resync of recovery catalog
+full resync complete
+
+RMAN>

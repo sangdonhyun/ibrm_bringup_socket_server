@@ -1,0 +1,170 @@
+﻿Created by Sangjae.Shin (ORACLE KOREA)
+Update date : 05-Jul-2021
+-----------------------------------------------------------------------------------------------------
+ZBRM_v2.9.6 (05-Jul-2021)
+ ➤ New Update
+
+ 1. Change running shell "bash" to "${SHELL}" and add ZFS_Profile ( export SHELL=/bin/bash )
+
+
+ ➤ Bug Fix
+
+ 1. Fixed bug that overwrite file zbrm.sh to ZBRM.sh when using compress utillity on windows OS. 
+    - change file name form ZBRM.sh to ZBRM_main.sh
+
+ZBRM_v2.9.3 (28-Dec-2020)
+ ➤ New Update
+
+ 1. Add RMAN Full ( not Incremental level 0 ) backup item
+ 2. Add backup progress item ( display rman channel & count of completed datafiles during Full, Incr 1, Incr 0 or Merge backup )
+ 3. Add backup cancel feature 
+ 4. Seperate backup items ( Full, Incr0, Incr 1 & merge, Incr 1 only, Merge only, Archive log ) in the ZBRM Main Menu 
+ 5. Customized Shell_log and each backup logs.
+
+ZBRM_v2.9 (14-Oct-2020)
+ ➤ New Update
+
+ 1. Add RMAN job cancel feature
+ 2. Add database incarnation informantion to $DB_NAME_Backup_Summary_yyyy_mmdd_hh.log file
+ 3. Changed the information collection method of the list_data.out file from the backup log to using RMAN query
+ 4. Changed backup log location
+    - /ZFS/LOGS/Backup/DBNAME -> /ZFS/LOGS/DBNAME
+ 
+ ➤ Bug Fix
+
+ 1. Fixed issue that does not delete Archive Log backup files
+
+ZBRM_v2.8 (23-Feb-2020)
+ ➤ New Update
+
+ 1. Add features to back up multiple DBs
+ 2. Significantly reduce environment variables that require modification
+ 3. Monitors of multiple DBs can be performed in conjunction with catalog db
+ 4. Change the backup log to be created in the directory by date
+ 5. Change Archive logs to be backed up to the directory by date
+ 6. Prevent time-out of terminal screen from taking long time to apply Clone DB's archive log
+ 7. Provides a script to create data directory for backups and CloneDB for the environment of the DB being backed up.
+ 8. Added directory for storing technical documents related to ZFS RMAN backup/recovery  
+    - /ZFS/SCRIPTS/TechNote
+ 9. Each Archive Log backup is completed and DB information summary files are created in the LOG Directory for reference during recovery.
+    - /ZFS/LOGS/Backup/DBNAME/DBNAME_yyyy_mmdd/DBNAME_Backup_summary_yyyy_mmddHH.log
+
+ ➤ Bug Fix
+ 
+ 1. Fixed issue that does not update list_data.out file information in Solaris.
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.7 (09-Dec-2019)
+ ➤ New Update
+
+ 1. Able to schedule backup as root for using backukp software and oracle user for using crontab.
+ 2. Backup data files locations are changed to the channel directory for multi-stream when 2nd tape archiving for long-term retention.
+ 3. Add feature able to bring-up CloneDB using replicated project 
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.6 (29-Sep-2019)
+ ➤ New Update
+
+ 1. Able to configure different count of Data Share and Archive Share. 
+    - Change parameter "CTRL_NO" to "DSHARE_NO" and "ARCH_NO" in the /ZFS/SCRIPTS/ZFS_Profile
+ 2. Make snapshot location file to the /ZFS/BACKUP/BK_DBNAME_01/data_sanpshot_tape.txt and arch_snapshot_tape.txt for tape archiving.  
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.5 (10-Aug-2019)
+ ➤ Bug Fix
+
+ 1. Delete incremental backuppiece files over 2days.
+ 2. Fixed couldn't deleted daily data snap & archive snap 
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.4 (06-Jun-2019)
+ ➤ New Update 
+
+ 1. Add item "6.Check the progress of the RMAN Backup" to the "1.ZFS RMAN Backup Manager".
+    - Display more detailed informations about RMAN backup ( Progress %, remaining time )
+ 2. Add item "3.Create Trace Control file and list datafile informations" to the CLONEDB Recover Menu.
+    - More easy to know about unanmed datafile list during recover CLONEDB
+
+ ➤ Bug Fix
+
+ 1. Could not starting as Schedule backup because missed base directory path
+ 2. Could not write list_data.out file as permition denied.
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.3 (28-May-2019)
+ ➤ New Update 
+
+ 1. Changed CloneDB's recovery type from using backup controlfile to create new controlfile.
+    - It is solve the redolog curruption of origianal DB.
+    - It is able to startup in the same DB server as different DB name like a CLONEDBx.
+
+ 2.  Function was added to the login profile of the root user and the remaining files were processed to minimize the file modification.
+    - Add line "export ZFS_BASEDIR=/ZFS" to the .bash_profile of root and oracle user.
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.2 (25-May-2019)
+ ➤ New Update 
+
+ 1. Able to set of connection count in the ZFS_Profile and CloneDB_Profile
+    - no more need to direct modify all of run_*.sh files in the SEHLLDIR.
+
+ 2. Separate DB recovery menu from Snapshot/Clone management menu.
+
+ 3. Provides sample files for database recovery used on a case-by-case basis in the CloneDB folder.
+    - /Base_dir/SCRIPTS/CloneDB/RMAN_Recovery_SAMPLE
+
+ 4. Added make_dir.sh file to create mount point of cloneBD to match name defined in CloneDB_Profile.
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.1 (20-May-2019)
+ ➤ New Update 
+
+ 1. Remove profile line in the all of subdirectorys running script files 
+
+ 2. Remove Incr share volume 
+
+ 3. Chage the historty list_rbt.out file creation time to after complete backup
+    - Information of redo log, block change tracking, tempfile
+
+ 4. Enable to change of Backup and CLONE directory name
+
+ 5. Enable to modify snapshot name
+
+ 6. Able to select or create current time archive log snapshot
+
+ 7. Minimized user define parameters
+
+ ➤ Bug Fix
+
+ 1. Correction of snapshot deletion errors according to backup retention policy
+ 2. Fix only Pool1 can be changed the logbias mode
+
+-----------------------------------------------------------------------------------------------------
+
+ZBRM_v2.0 (06-May-2019)
+ ➤ New update
+ 
+ 1. Relocated Files according to the R&R  
+    - DBA role folder for backup is /ZFS/SCRIPTS/RMAN 
+    - DBA role folder for make a CloneDB is /ZFS/SCRIPTS/CloneDB/CloneDBx/DBA 
+    - DBA role for RMAN is /ZFS/SCRIPTS/SQL
+    - Others are ZFS Engineer's role 
+
+ 2. This version able to create 3 CloneDBs using Menu 
+
+ 3. Make a history log file for archive log and datafile for make a CloneDB recover database
+ 
+ 4. Redolog, bct log, tempfile automatically getnerated  during make a CloneDB
+
+ ➤ Bug Fix 
+
+ 1. Create archive log file using "alter switch archive log current" in the RAC mode
+ 2. Change control file backup sequence after archive log switch.
+
+-----------------------------------------------------------------------------------------------------

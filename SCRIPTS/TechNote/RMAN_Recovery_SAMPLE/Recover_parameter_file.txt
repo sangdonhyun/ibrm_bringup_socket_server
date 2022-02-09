@@ -1,0 +1,14 @@
+## parameter file was broken (pfile/spfille) and database offline
+SQL> startup
+SQL> select dbid from v$database;
+
+RMAN> set dbid=xxxxx
+RMAN> startup nomount
+RMAN> restore spfile from autobackup;
+
+SQL> create pfile from spfile
+SQL> shutdown immediate
+SQL> startup mount
+
+RMAN> recover database;
+RMAN> alter database open;
